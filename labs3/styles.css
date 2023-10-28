@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Rubik&family=Space+Mono&display=swap');
+
+body {
+  background-color: #f1f1f1;
+  color: #0f141e;
+
+  font-size: 16px;
+  font-weight: normal;
+  font-family: 'Rubik', sans-serif;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: blue;
+}
+
+a:visited {
+  color: grey;
+}
+
+.pcenter{
+  text-align: center;
+}
+
+.info-text h4 {
+  margin-bottom: 10px;
+}
+
+.info p {
+  color: #86898f;
+  margin: 0;
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+button,
+button:active,
+button:focus  {
+  border:none;
+}
+
+.container {
+  max-width: 750px;
+  margin: auto;
+  padding-top: 5px;
+}
+
+.content{
+  padding: 0 18px; max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #d9d9d9;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.card {
+  background: #d9d9d9;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.cardactive {
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  color: black;
+  background-color: #d9d9d9;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+}
+
+active,
+.cardactive:hover{
+  background-color: hsl(0, 100%, 66%);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+.list {
+  padding: 0 20px;
+}
+
+.list li {
+  color: grey;
+  margin-bottom: 10px;
+}
+
+.link-list {
+  list-style: none;
+  padding: 0;
+}
+
+.link-list li {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #555;
+}
