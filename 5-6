@@ -1,0 +1,107 @@
+-- Создание таблиц
+CREATE TABLE students (
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(255),
+  group_id INTEGER NOT NULL
+);
+
+CREATE TABLE student_marks (
+  student_id INTEGER PRIMARY KEY,
+  math_mark_average FLOAT,
+  physics_mark_average FLOAT,
+  python_mark_average FLOAT
+);
+
+CREATE TABLE groups (
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  description VARCHAR(255)
+);
+
+-- Вставка данных в таблицы
+INSERT INTO groups (id, name, description) VALUES
+(1, 'Группа А', 'Описание для Группы А'),
+(2, 'Группа Б', 'Описание для Группы Б');
+
+INSERT INTO students (id, name, group_id) VALUES
+(1, 'Студент 1', 1),
+(2, 'Студент 2', 1),
+(3, 'Студент 3', 2);
+
+INSERT INTO student_marks (student_id, math_mark_average, physics_mark_average, python_mark_average) VALUES
+(1, 90.5, 85.0, 92.5),
+(2, 88.0, 90.5, 87.0),
+(3, 75.5, 82.0, 78.5);
+
+Фильтрация таблицы Students:
+
+-- Выбор студентов из Группы А
+SELECT * FROM students WHERE group_id = 1;
+
+Фильтрация таблицы Student Marks:
+
+-- Выбор студентов с средней оценкой по математике больше 85
+SELECT * FROM student_marks WHERE math_mark_average > 85.0;
+
+Фильтрация таблицы Groups:
+
+-- Выбор групп с определенным именем
+SELECT * FROM groups WHERE name = 'Группа А';
+
+
+-- Создание таблицы "worker"
+CREATE TABLE worker (
+    worker_id INTEGER PRIMARY KEY,
+    shop_id INTEGER REFERENCES product (id),
+    name VARCHAR(255),
+    salary INTEGER NOT NULL,
+    position VARCHAR(255)
+);
+
+-- Внесение данных о сотрудниках
+INSERT INTO worker (worker_id, shop_id, name, salary, position) VALUES
+    (1, 101, 'Иван Иванов', 50000, 'Менеджер'),
+    (2, 102, 'Мария Петрова', 60000, 'Продавец'),
+    (3, 101, 'Александр Сидоров', 55000, 'Кассир'),
+    (4, 103, 'Екатерина Иванова', 48000, 'Продавец');
+
+Запрос на получение средней зарплаты по должностям:
+
+SELECT position, AVG(salary) AS avg_salary
+FROM worker
+GROUP BY position;
+
+Запрос на получение количества сотрудников в каждом магазине:
+
+SELECT shop_id, COUNT(*) AS num_workers
+FROM worker
+GROUP BY shop_id;
+
+Запрос на получение списка сотрудников, отсортированных по убыванию зарплаты:
+
+SELECT * FROM worker
+ORDER BY salary DESC;
+
+Запрос на вычисление общей суммы зарплаты всех сотрудников:
+
+SELECT SUM(salary) AS total_salary
+FROM worker;
+
+Запрос на вычисление максимальной зарплаты среди сотрудников:
+
+SELECT MAX(salary) AS max_salary
+FROM worker;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
